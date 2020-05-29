@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+'''
+A simple quantum circuit that replicates the state of a qubit to N others
+'''
+
+import argparse
+
+from qiskit import QuantumCircuit, Aer, execute
+
+def to_statevector(a):
+    '''Convert a binary string into its representative qubit statevector'''
+    if a == "0":
+        return [1, 0]
+    return [0, 1]
+
+def create_circuit(in_state, n):
+    '''Construct the circuit with the input states set'''
+    qcircuit = QuantumCircuit(n)
+    qcircuit.initialize(to_statevector(in_state[0]), 0)
+    for i in range(1, n):
+        qcircuit.cnot(0, i)
+    meas = QuantumCircuit(n, n)
+    meas.barrier(range(n))
+    meas.measure(range(n), range(n))
+    return qcircuit + meas
+
+
+if __name__ == '__main__':
+    PARSER = argparse.ArgumentParser(
+        description="A simple quantum circuit that replicates the state of a qubit to N others"
+    )
+    PARSER.add_argument(
+        'in_state', metavar='INPUT_STATE', type=str,
+        help='Binary string representing the input state of the qubit'
+    )
+    PARSER.add_argument(
+        'n', metavar='N', type=int,
+        help='The number of qubits to fanout to'
+    )
+    ARGS = PARSER.parse_args()
+    QCIRC = create_circuit(ARGS.in_state, ARGS.n)
+    print("Created circuit:")
+    print(QCIRC.draw())
+    BACKEND_SIM = Aer.get_backend('qasm_simulator')
+    RESULT = execute(QCIRC, BACKEND_SIM).result()
+    print(f'Result: |{ARGS.in_state}> -> |{max(RESULT.get_counts())[::-1]}>')

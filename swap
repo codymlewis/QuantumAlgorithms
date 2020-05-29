@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+
+'''
+A simple quantum circuit that swaps qubits sequentially
+'''
+
+import argparse
+
+from qiskit import QuantumCircuit, Aer, execute
+
+def swap_qubits(qcircuit, i, j):
+    '''Performs that transform swapping the value in q_i with q_j'''
+    qcircuit.cnot(i, j)
+    qcircuit.cnot(j, i)
+    qcircuit.cnot(i, j)
+
+def to_statevector(a):
+    '''Convert a binary string into its representative qubit statevector'''
+    if a == "0":
+        return [1, 0]
+    return [0, 1]
+
+def create_circuit(in_states):
+    '''Construct the circuit with the input states set'''
+    n = len(in_states)
+    qcircuit = QuantumCircuit(n)
+    for i in range(n):
+        qcircuit.initialize(to_statevector(in_states[i]), i)
+    for i in range(n - 1):
+        swap_qubits(qcircuit, i, i + 1)
+    meas = QuantumCircuit(n, n)
+    meas.barrier(range(n))
+    meas.measure(range(n), range(n))
+    return qcircuit + meas
+
+
+if __name__ == '__main__':
+    PARSER = argparse.ArgumentParser(
+        description="A simple quantum circuit that swaps qubits sequentially"
+    )
+    PARSER.add_argument(
+        'in_states', metavar='INPUT_STATES', type=str,
+        help='Binary string representing the input states of the qubits'
+    )
+    ARGS = PARSER.parse_args()
+    QCIRC = create_circuit(ARGS.in_states)
+    print("Created circuit:")
+    print(QCIRC.draw())
+    BACKEND_SIM = Aer.get_backend('qasm_simulator')
+    RESULT = execute(QCIRC, BACKEND_SIM).result()
+    print(f'Result: |{ARGS.in_states}> -> |{max(RESULT.get_counts())[::-1]}>')
