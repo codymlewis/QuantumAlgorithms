@@ -43,7 +43,7 @@ def create_circuit(in_state, n):
 
 if __name__ == '__main__':
     print(
-        "swap  Copyright (C) 2020  Cody Lewis\n" +
+        "fanout  Copyright (C) 2020  Cody Lewis\n" +
         "This program comes with ABSOLUTELY NO WARRANTY.\n" +
         "This is free software, and you are welcome to redistribute it under certain conditions.\n"
     )

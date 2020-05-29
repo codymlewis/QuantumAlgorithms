@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/09b7cc50/
+0. Definitions.	LICENSE.md	/^#### 0. Definitions.$/;"	t	subsection:TERMS AND CONDITIONS
+1. Source Code.	LICENSE.md	/^#### 1. Source Code.$/;"	t	subsection:TERMS AND CONDITIONS
+10. Automatic Licensing of Downstream Recipients.	LICENSE.md	/^#### 10. Automatic Licensing of Downstream Recipients.$/;"	t	subsection:TERMS AND CONDITIONS
+11. Patents.	LICENSE.md	/^#### 11. Patents.$/;"	t	subsection:TERMS AND CONDITIONS
+12. No Surrender of Others' Freedom.	LICENSE.md	/^#### 12. No Surrender of Others' Freedom.$/;"	t	subsection:TERMS AND CONDITIONS
+13. Use with the GNU Affero General Public License.	LICENSE.md	/^#### 13. Use with the GNU Affero General Public License.$/;"	t	subsection:TERMS AND CONDITIONS
+14. Revised Versions of this License.	LICENSE.md	/^#### 14. Revised Versions of this License.$/;"	t	subsection:TERMS AND CONDITIONS
+15. Disclaimer of Warranty.	LICENSE.md	/^#### 15. Disclaimer of Warranty.$/;"	t	subsection:TERMS AND CONDITIONS
+16. Limitation of Liability.	LICENSE.md	/^#### 16. Limitation of Liability.$/;"	t	subsection:TERMS AND CONDITIONS
+17. Interpretation of Sections 15 and 16.	LICENSE.md	/^#### 17. Interpretation of Sections 15 and 16.$/;"	t	subsection:TERMS AND CONDITIONS
+2. Basic Permissions.	LICENSE.md	/^#### 2. Basic Permissions.$/;"	t	subsection:TERMS AND CONDITIONS
+3. Protecting Users' Legal Rights From Anti-Circumvention Law.	LICENSE.md	/^#### 3. Protecting Users' Legal Rights From Anti-Circumvention Law.$/;"	t	subsection:TERMS AND CONDITIONS
+4. Conveying Verbatim Copies.	LICENSE.md	/^#### 4. Conveying Verbatim Copies.$/;"	t	subsection:TERMS AND CONDITIONS
+5. Conveying Modified Source Versions.	LICENSE.md	/^#### 5. Conveying Modified Source Versions.$/;"	t	subsection:TERMS AND CONDITIONS
+6. Conveying Non-Source Forms.	LICENSE.md	/^#### 6. Conveying Non-Source Forms.$/;"	t	subsection:TERMS AND CONDITIONS
+7. Additional Terms.	LICENSE.md	/^#### 7. Additional Terms.$/;"	t	subsection:TERMS AND CONDITIONS
+8. Termination.	LICENSE.md	/^#### 8. Termination.$/;"	t	subsection:TERMS AND CONDITIONS
+9. Acceptance Not Required for Having Copies.	LICENSE.md	/^#### 9. Acceptance Not Required for Having Copies.$/;"	t	subsection:TERMS AND CONDITIONS
+ARGS	fanout	/^    ARGS = PARSER.parse_args()$/;"	v
+ARGS	swap	/^    ARGS = PARSER.parse_args()$/;"	v
+BACKEND_SIM	fanout	/^    BACKEND_SIM = Aer.get_backend('qasm_simulator')$/;"	v
+BACKEND_SIM	swap	/^    BACKEND_SIM = Aer.get_backend('qasm_simulator')$/;"	v
+GNU GENERAL PUBLIC LICENSE	LICENSE.md	/^### GNU GENERAL PUBLIC LICENSE$/;"	S
+Installation	README.md	/^## Installation$/;"	s	chapter:Quantum Algorithms
+PARSER	fanout	/^    PARSER = argparse.ArgumentParser($/;"	v
+PARSER	swap	/^    PARSER = argparse.ArgumentParser($/;"	v
+Preamble	LICENSE.md	/^### Preamble$/;"	S
+QCIRC	fanout	/^    QCIRC = create_circuit(ARGS.in_state, ARGS.n)$/;"	v
+QCIRC	swap	/^    QCIRC = create_circuit(ARGS.in_states)$/;"	v
+Quantum Algorithms	README.md	/^# Quantum Algorithms$/;"	c
+RESULT	fanout	/^    RESULT = execute(QCIRC, BACKEND_SIM).result()$/;"	v
+RESULT	swap	/^    RESULT = execute(QCIRC, BACKEND_SIM).result()$/;"	v
+Requirements	README.md	/^## Requirements$/;"	s	chapter:Quantum Algorithms
+Running	README.md	/^## Running$/;"	s	chapter:Quantum Algorithms
+TERMS AND CONDITIONS	LICENSE.md	/^### TERMS AND CONDITIONS$/;"	S
+create_circuit	fanout	/^def create_circuit(in_state, n):$/;"	f
+create_circuit	swap	/^def create_circuit(in_states):$/;"	f
+swap_qubits	swap	/^def swap_qubits(qcircuit, i, j):$/;"	f
+to_statevector	fanout	/^def to_statevector(a):$/;"	f
+to_statevector	swap	/^def to_statevector(a):$/;"	f
